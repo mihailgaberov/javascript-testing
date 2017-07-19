@@ -15,7 +15,18 @@ class AddressBook {
     return this.contacts[index]
   }
 
+  deleteContact(index) {
+    this.contacts.splice(index, 1)
+  }
 
+  getInitialContacts(cb) {
+    setTimeout(() => {
+      this.initialComplete = true
+      if (cb) {
+        return cb()
+      }
+    }, 3)
+  }
 }
 
 export default AddressBook

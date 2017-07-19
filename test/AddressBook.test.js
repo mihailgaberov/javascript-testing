@@ -15,7 +15,7 @@ describe('Address book', () => {
   })
 
   it('should be able to add a contact', () => {
-    addressBook.addContact(thisContact);
-    expect(addressBook.getContact(0)).toBe(thisContact);
+    addressBook.addContact(thisContact)
+    expect(addressBook.getContact(0)).to.be.equal(thisContact)
   })
 })

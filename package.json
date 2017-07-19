@@ -1,0 +1,9 @@
+{
+  "name": "javascript-testing",
+  "version": "1.0.0",
+  "description": "Javascript testing training",
+  "main": "index.js",
+  "repository": "https://github.com/mihailgaberov/javascript-testing.git",
+  "author": "Mihail Gaberov <mihail.gaberov@gmail.com>",
+  "license": "MIT"
+}

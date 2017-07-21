@@ -16,7 +16,7 @@ describe('Address book', () => {
 
   it('should be able to add a contact', () => {
     addressBook.addContact(thisContact)
-    expect(addressBook.getContact(0)).to.be.equal(thisContact)
+    expect(addressBook.getContact(1)).to.be.equal(thisContact)
   })
 
   it('should be able to delete contact', () => {

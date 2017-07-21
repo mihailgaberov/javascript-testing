@@ -10,7 +10,6 @@ jobs:
       - checkout
       - restore_cache:
         key: dependency-cache-{{ checksum "package.json" }}
-
       - run: yarn install
       - save_cache:
         key: dependency-cache-{{ checksum "package.json" }}

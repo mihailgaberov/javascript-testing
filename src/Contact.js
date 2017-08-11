@@ -9,6 +9,17 @@ class Contact {
   }
 
 
+  getName() {
+    return this.name
+  }
+
+  getEmail() {
+    return this.email
+  }
+
+  getPhone() {
+    return this.phone
+  }
 }
 
 export default Contact

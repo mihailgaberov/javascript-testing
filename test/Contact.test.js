@@ -13,5 +13,23 @@ describe('Contact', () => {
     expect(contact.name).to.be.equal('Mihail Gaberov')
   })
 
+  it('should have email', () => {
+    expect(contact.email).to.be.equal('mihail.gaberov@gmail.com')
+  })
 
+  it('should have phone number', () => {
+    expect(contact.phone).to.be.equal(666777888)
+  })
+
+  it('name should be string', () => {
+    expect(contact.name).to.be.a('string')
+  })
+
+  it('email should be string', () => {
+    expect(contact.email).to.be.a('string')
+  })
+
+  it('phone should be number', () => {
+    expect(contact.phone).to.be.a('number')
+  })
 })

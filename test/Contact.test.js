@@ -44,4 +44,8 @@ describe('Contact', () => {
   it('should have method for getting the phone', () => {
     expect(contact.getPhone()).to.be.equal(666777888)
   })
+
+  it('should have method for getting the visit card info - name and email formatted', () => {
+    expect(contact.getVisitCardData()).to.be.equal('Mihail Gaberov <mihail.gaberov@gmail.com>')
+  })
 })

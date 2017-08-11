@@ -20,6 +20,10 @@ class Contact {
   getPhone() {
     return this.phone
   }
+
+  getVisitCardData() {
+    return `${this.name} <${this.email}>`
+  }
 }
 
 export default Contact

@@ -4,23 +4,23 @@
 import { expect } from 'chai'
 import AddressBook from '../src/AddressBook'
 import Contact from '../src/Contact'
+import data from '../mocks/contact.json'
 
 describe('Address book', () => {
-  let addressBook,
-    thisContact
+  let addressBook, contact
 
   beforeEach(() => {
     addressBook = new AddressBook()
-    thisContact = new Contact()
+    contact = new Contact(data)
   })
 
   it('should be able to add a contact', () => {
-    addressBook.addContact(thisContact)
-    expect(addressBook.getContact(0)).to.be.equal(thisContact)
+    addressBook.addContact(contact)
+    expect(addressBook.getContact(0)).to.be.equal(contact)
   })
 
   it('should be able to delete contact', () => {
-    addressBook.addContact(thisContact)
+    addressBook.addContact(contact)
     addressBook.deleteContact(0)
 
     expect(addressBook.getContact(0)).to.be.undefined

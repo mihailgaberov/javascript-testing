@@ -25,7 +25,7 @@ class AddressBook {
       if (cb) {
         return cb()
       }
-    }, 3)
+    }, 500)
   }
 }
 

@@ -2,9 +2,9 @@
  * Created by mgab on 19/07/2017.
  */
 import { expect } from 'chai'
-import AddressBook from '../src/AddressBook'
-import Contact from '../src/Contact'
-import data from '../mocks/contact.json'
+import AddressBook from '../../src/async/AddressBook'
+import Contact from '../../src/async/Contact'
+import data from '../../mocks/contact.json'
 
 describe('Address book', () => {
   let addressBook, contact

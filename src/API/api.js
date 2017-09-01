@@ -2,31 +2,31 @@
  * Created by mgab on 31/08/2017.
  */
 class Api {
-  constructor () {
+  constructor() {
     this.user = { id: 1, name: 'test' }
-    this.friends = [ this.user, this.user, this.user ]
+    this.friends = [this.user, this.user, this.user]
     this.photo = 'not a real photo'
   }
 
-  getUser () {
+  getUser() {
     return new Promise((resolve, reject) => {
       setTimeout(() => resolve(this.user), 200)
     })
   }
 
-  getFriends (userId) {
+  getFriends(userId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => resolve(this.friends.slice()), 200)
     })
   }
 
-  getPhoto (userId) {
+  getPhoto(userId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => resolve(this.photo), 200)
     })
   }
 
-  throwError () {
+  throwError() {
     return new Promise((resolve, reject) => {
       setTimeout(() => reject(new Error('Intentional Error')), 200)
     })

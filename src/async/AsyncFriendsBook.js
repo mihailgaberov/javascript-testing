@@ -4,14 +4,15 @@ export default class AsyncFriendsBook {
 
   static callbackHell() {
     const api = new Api()
-    let user, friends
 
-    return api.getUser().then(function (returnedUser) {
-      user = returnedUser
-      api.getFriends(user.id).then(function (returnedFriends) {
-        friends = returnedFriends
-        api.getPhoto(user.id).then(function (photo) {
-           return { user, friends, photo }
+    return api.getUser().then((returnedUser) => {
+      return api.getFriends(returnedUser.id).then((returnedFriends) => {
+        return api.getPhoto(returnedUser.id).then((photo) => {
+          return {
+            user: returnedUser,
+            friends: returnedFriends,
+            pic: photo
+          }
         })
       })
     })

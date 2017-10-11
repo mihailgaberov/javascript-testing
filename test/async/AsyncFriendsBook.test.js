@@ -7,18 +7,21 @@ import AsyncFriendsBook from '../../src/async/AsyncFriendsBook'
 describe('AsyncFriendsBook', () => {
   it('should return user info using callbackHell', (done) => {
     AsyncFriendsBook.callbackHell().then((result) => {
-      console.log('resultrs: ', result)
-
-      expect(result).to.equal({
+      const expected = {
         user: { id: 1, name: 'Mihail Gaberov' },
-        friends:
-          [{ id: 1, name: 'Mihail Gaberov' },
-            { id: 1, name: 'Mihail Gaberov' },
-            { id: 1, name: 'Mihail Gaberov' }],
-        photo: 'not a real photo'
-      })
+        friends: [{ id: 1, name: 'Mihail Gaberov' }, { id: 1, name: 'Mihail Gaberov' }, {
+          id: 1,
+          name: 'Mihail Gaberov'
+        }],
+        pic: 'not a real photo'
+      }
+
+
+      expect(result).to.be.equal(expected)
       done()
     })
-      .catch(done)
+      .catch((done) => {
+      console.log(done)
+      })
   })
 })

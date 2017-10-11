@@ -10,19 +10,19 @@ export default class Api {
 
   getUser() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(this.user), 200)
+      setTimeout(() => resolve(this.user), 0)
     })
   }
 
   getFriends(userId) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(this.friends.slice()), 200)
+      setTimeout(() => resolve(this.friends.slice()), 0)
     })
   }
 
   getPhoto(userId) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(this.photo), 200)
+      setTimeout(() => resolve(this.photo), 0)
     })
   }
 

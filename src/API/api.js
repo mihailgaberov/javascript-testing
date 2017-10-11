@@ -1,7 +1,7 @@
 /**
  * Created by mgab on 31/08/2017.
  */
-class Api {
+export default class Api {
   constructor() {
     this.user = { id: 1, name: 'test' }
     this.friends = [this.user, this.user, this.user]

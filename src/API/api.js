@@ -3,7 +3,7 @@
  */
 export default class Api {
   constructor() {
-    this.user = { id: 1, name: 'test' }
+    this.user = { id: 1, name: 'Mihail Gaberov' }
     this.friends = [this.user, this.user, this.user]
     this.photo = 'not a real photo'
   }

@@ -1,4 +1,6 @@
-import { expect } from 'chai'
+import { expect, assert} from 'chai'
+import sinon from 'sinon'
+
 import 'babel-polyfill';
 
 import AsyncFriendsBook from '../../src/async/AsyncFriendsBook'
@@ -78,5 +80,11 @@ describe('AsyncFriendsBook', () => {
     }
     const result = await AsyncFriendsBook.asyncAwaitIsYourNewBestFriend()
     expect(result).to.deep.equal(expected)
+  })
+
+  it('should return user info using callback functions tested with SinonJS', () => {
+    const callback = sinon.spy()
+    AsyncFriendsBook.callbackWithSinon(callback)
+    assert(true, callback.calledOnce)
   })
 })

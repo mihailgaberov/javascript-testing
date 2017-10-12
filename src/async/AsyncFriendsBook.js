@@ -44,4 +44,16 @@ export default class AsyncFriendsBook {
     const photo = await api.getPhoto(user.id)
     return { user, friends, photo }
   }
+
+  static callbackWithSinon(callback) {
+    const api = new Api()
+
+    return api.getUser().then((returnedUser) => {
+      return api.getFriends(returnedUser.id).then((returnedFriends) => {
+        return api.getPhoto(returnedUser.id).then((photo) => {
+          callback(returnedFriends, returnedUser, photo)
+        })
+      })
+    })
+  }
 }

@@ -36,6 +36,22 @@ describe('AsyncFriendsBook', () => {
     })
   })
 
+  it('should return user info using promiseChain - done()', (done) => {
+    AsyncFriendsBook.promiseChain().then((result) => {
+      const expected = {
+        user: {id: 1, name: 'Mihail Gaberov'},
+        friends: [
+          {id: 1, name: 'Mihail Gaberov'},
+          {id: 1, name: 'Mihail Gaberov'},
+          {id: 1, name: 'Mihail Gaberov'}
+        ],
+        photo: 'not a real photo'
+      }
+      expect(result).to.deep.equal(expected)
+      done()
+    })
+  })
+
   it('should return user info using promiseChain - returned promise', () => {
     return AsyncFriendsBook.promiseChain().then((result) => {
       const expected = {
@@ -48,7 +64,6 @@ describe('AsyncFriendsBook', () => {
         photo: 'not a real photo'
       }
       expect(result).to.deep.equal(expected)
-      // done()
     })
   })
 })

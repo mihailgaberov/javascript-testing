@@ -21,7 +21,8 @@ export default class AsyncFriendsBook {
   static promiseChain() {
     const api = new Api()
     let user, friends
-    api.getUser()
+
+    return api.getUser()
       .then((returnedUser) => {
         user = returnedUser
         return api.getFriends(user.id)
@@ -31,7 +32,7 @@ export default class AsyncFriendsBook {
         return api.getPhoto(user.id)
       })
       .then((photo) => {
-        console.log('promiseChain', { user, friends, photo })
+        // console.log('promiseChain', { user, friends, photo })
         return { user, friends, photo }
       })
   }

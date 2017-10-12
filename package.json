@@ -22,6 +22,7 @@
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.0",
     "mocha": "^3.4.2",
-    "sinon": "^4.0.1"
+    "sinon": "^4.0.1",
+    "sinon-chai": "^2.14.0"
   }
 }

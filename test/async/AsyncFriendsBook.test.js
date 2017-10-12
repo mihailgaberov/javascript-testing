@@ -1,9 +1,11 @@
-import { expect, assert} from 'chai'
+import chai, { expect } from 'chai'
 import sinon from 'sinon'
-
-import 'babel-polyfill';
-
+import sinonChai from 'sinon-chai'
+import 'babel-polyfill'
 import AsyncFriendsBook from '../../src/async/AsyncFriendsBook'
+
+chai.use(sinonChai)
+
 
 describe('AsyncFriendsBook', () => {
   it('should return user info using callbackHell - done()', (done) => {
@@ -82,9 +84,18 @@ describe('AsyncFriendsBook', () => {
     expect(result).to.deep.equal(expected)
   })
 
-  it('should return user info using callback functions tested with SinonJS', () => {
+  it('should return user info using callback functions tested with SinonJS - done()', (done) => {
     const callback = sinon.spy()
-    AsyncFriendsBook.callbackWithSinon(callback)
-    assert(true, callback.calledOnce)
+    AsyncFriendsBook.callbackWithSinon(callback).then((result) => {
+      expect(callback).to.have.been.calledOnce
+      done()
+    })
+  })
+
+  it('should return user info using callback functions tested with SinonJS - returned promises', () => {
+    const callback = sinon.spy()
+    return AsyncFriendsBook.callbackWithSinon(callback).then((result) => {
+      expect(callback).to.have.been.calledOnce
+    })
   })
 })

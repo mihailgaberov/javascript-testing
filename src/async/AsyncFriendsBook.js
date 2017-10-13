@@ -32,7 +32,6 @@ export default class AsyncFriendsBook {
         return api.getPhoto(user.id)
       })
       .then((photo) => {
-        // console.log('promiseChain', { user, friends, photo })
         return { user, friends, photo }
       })
   }

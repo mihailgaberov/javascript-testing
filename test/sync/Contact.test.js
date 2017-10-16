@@ -26,7 +26,7 @@ describe('Contact', () => {
   })
 
   it('email should be string', () => {
-    expect(contact.email).to.be.a('string')
+    expect(contact.email).to.be.a('string') 
   })
 
   it('phone should be number', () => {
